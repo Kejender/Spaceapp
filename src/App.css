@@ -1,0 +1,329 @@
+#root {
+  max-width: 1280px;
+  /*margin: 0 auto;*/
+  padding: 2rem;
+  /*text-align: center;*/
+}
+
+#wrap{
+  /*display: block;*/
+  overflow: auto;
+  /*width: 1000px;
+  height: 814px;
+  border: 2px solid black;*/
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.spacephoto {
+  position: absolute;
+  height:fit-content;
+  z-index: 2;
+}
+
+.weather {
+  position: absolute;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 5;
+  width: 600px;
+  background: rgba(170, 187, 97, 0.5);
+  overflow: auto;
+  opacity: 0;
+  animation: fadeIn 1s;
+}
+
+
+.photoinfo {
+  position: absolute;
+  background: rgba(170, 187, 97, 0.5);
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*opacity: 0;
+  margin-top: 10px;
+  background-color: #282c34;
+  opacity: 20%;*/
+  border-radius: 5px;
+  z-index: 5;
+  width: 600px;
+}
+
+
+.visible:hover {
+  position: absolute;
+  background: rgba(170, 187, 97, 1);
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  z-index: 5;
+  width: 600px;
+}
+
+
+.weatherIn {
+  position: absolute;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 5;
+  width: 600px;
+  background: rgba(170, 187, 97, 0.5);
+  overflow: auto;
+  opacity: 1;
+  animation: fadeIn 1s;
+  visibility: visible;
+}
+
+
+.photoinfoOut {
+  position: absolute;
+  background: rgba(170, 187, 97, 0.5);
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*opacity: 0;
+  margin-top: 10px;
+  background-color: #282c34;*/
+  opacity: 0;
+  border-radius: 5px;
+  z-index: 10;
+  width: 600px;
+  animation: fadeOut 1s;
+  visibility: hidden;
+}
+
+.weatherOut {
+  position: absolute;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 5;
+  width: 600px;
+  background: rgba(170, 187, 97, 0.5);
+  overflow: auto;
+  opacity: 0;
+  animation: fadeOut 1s;
+  visibility: hidden;
+}
+.photoinfoIn {
+  position: absolute;
+  background: rgba(170, 187, 97, 0.5);
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*opacity: 0;
+  margin-top: 10px;
+  background-color: #282c34;*/
+  opacity: 1;
+  border-radius: 5px;
+  z-index: 10;
+  width: 600px;
+  animation: fadeIn 1s;
+  visibility: visible;
+}
+
+
+.aboutIn {
+  position: absolute;
+  background: rgba(170, 187, 97, 1);
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*opacity: 0;
+  margin-top: 10px;
+  background-color: #282c34;*/
+  opacity: 1;
+  border-radius: 5px;
+  z-index: 15;
+  width: 600px;
+  animation: fadeIn 1s;
+  visibility: visible;
+}
+
+
+.aboutOut {
+  position: absolute;
+  background: rgba(170, 187, 97, 0.5);
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*opacity: 0;
+  margin-top: 10px;
+  background-color: #282c34;*/
+  opacity: 0;
+  border-radius: 5px;
+  z-index: 5;
+  width: 600px;
+  animation: fadeOut 1s;
+  visibility: hidden;
+}
+
+.infowrap {
+  background: rgba(170, 187, 97, 0.5);
+  border-radius: 5px;
+  /*position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: #282c34;
+  opacity: 20%;
+  z-index: 5;
+  width: 600px;*/
+}
+
+
+.infowrap:hover {
+  background: rgba(170, 187, 97, 1);
+  border-radius: 5px;
+  /*position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: #282c34;
+  opacity: 20%;
+  z-index: 5;
+  width: 600px;*/
+}
+
+.textwrap {
+  /*position: absolute;*/
+  margin-top: 10px;
+  /*background: rgba(170, 187, 97, 0.5);*/
+  border-radius: 5px;
+  overflow: auto;
+  /*opacity: 20%;
+  z-index: 5;
+  width: 600px;*/
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+/*.icon {
+  position: absolute;
+  float: right;
+  bottom: 0;
+  margin: 100px;
+  width:200px;
+  height:200px;
+  z-index: 6;
+}*/
+
+
+.flip-box {
+  position: relative;
+  display: block;
+  float: right;
+  bottom: 0;
+  /*top: 60%;
+  transform: translateY(-100%);
+  vertical-align: bottom;
+  margin: 100px;*/
+  margin-top: 50%;
+  margin-right: 50px;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+
+  animation-name: flipflop;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  z-index: 6;
+}
+
+@keyframes flipflop {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+/* Style the back side */
+.flip-box-back {
+  transform: rotateY(180deg);
+}
