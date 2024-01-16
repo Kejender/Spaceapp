@@ -226,6 +226,8 @@
   /*background: rgba(170, 187, 97, 0.5);*/
   border-radius: 5px;
   overflow: auto;
+  min-width: 800px;
+  min-height: 800px;
   /*opacity: 20%;
   z-index: 5;
   width: 600px;*/
