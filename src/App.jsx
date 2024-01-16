@@ -168,8 +168,9 @@ useEffect(() => {
   return (
     <>
       <div id="wrap">
-      <Photo photo={spaceImage} changeText2={changeText2}/>
+      
       <div id="textwrap" className='textwrap'>
+      <Photo photo={spaceImage} changeText2={changeText2}/>
         <PhotoInfo photoinfo={spaceImageInfo} toggleText={toggleText} changeText={changeText} changeText2={changeText2}/>
         <Info hideInfo={hideInfo} aboutcomponent={aboutcomponent}/>
         <div className='weather hidden' id='weather'>
