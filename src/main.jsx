@@ -4,8 +4,6 @@ import App from './App.jsx'
 import './index.css'
 //require('dotenv').config()
 
-const SPACEKEY = process.env.SPACEKEY
-console.log(process.env.SPACEKEY)
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
