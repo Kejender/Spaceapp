@@ -16,7 +16,7 @@ function App() {
   const [ spaceImageInfo, setImageInfo  ] = useState('')
   const [ spaceWeather, setWeather  ] = useState([])
   const [ toggleText, changeText ] = useState([false])
-  const [ infoVisible, setInfoVisible] = useState(false)
+  const [ infoVisible, setInfoVisible] = useState(true)
   const [ weatherVisible, setWeatherVisible] = useState(false)
 
   const weathercomponent = document.getElementById('weather');
@@ -31,13 +31,14 @@ const changeText2 = () => {
   aboutcomponent.classList.replace("aboutIn", "aboutOut")
   aboutcomponent.classList.replace("visible", "hidden")
 
+  // weather and photoinfo are hidden, show photoinfo
   if (!infoVisible && !weatherVisible) {
     console.log("1")
     setWeatherVisible(false)
     setInfoVisible(true)
 
     weathercomponent.classList.replace("weather", "weatherOut")
-    photoinfocomponent.classList.replace("photoinfo", "photoinfoIn")
+    photoinfocomponent.classList.replace("photoinfoOut", "photoinfoIn")
     photoinfocomponent.classList.replace("hidden", "visible")
     photoinfocomponent.classList.replace("photoinfoOut", "photoinfoIn")
 
@@ -63,6 +64,12 @@ const changeText2 = () => {
 }
 
 const showInfo = () => {
+
+  photoinfocomponent.classList.replace("photoinfoIn", "photoinfoOut")
+  photoinfocomponent.classList.replace("visible", "hidden")
+  weathercomponent.classList.replace("weatherIn", "weatherOut")
+  weathercomponent.classList.replace("visible", "hidden")
+
   aboutcomponent.classList.replace("aboutOut", "aboutIn")
   aboutcomponent.classList.replace("hidden", "visible")
   console.log("info")
@@ -173,7 +180,7 @@ useEffect(() => {
       <Photo photo={spaceImage} changeText2={changeText2}/>
         <PhotoInfo photoinfo={spaceImageInfo} toggleText={toggleText} changeText={changeText} changeText2={changeText2}/>
         <Info hideInfo={hideInfo} aboutcomponent={aboutcomponent}/>
-        <div className='weather hidden' id='weather'>
+        <div className='weatherOut hidden' id='weather'>
           <h3>Space weather</h3>
           {spaceWeather.map(weather => 
             <Weather key={weather.length} weather={weather} />
