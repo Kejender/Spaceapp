@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // Getting dates of today and yesterday and formatting them
-// for API call
+// for API call although in fact they are not used now
 
 let datetoday = Date.now()
 let dateyesterday = datetoday - 86400000;
@@ -56,7 +56,8 @@ let today = (`${year}-${month}-${dnumber}`)
 console.log(yesterday)
 console.log(today)
 
-const baseUrl = `https://api.nasa.gov/DONKI/notifications?startDate=${yesterday}&endDate=${today}&type=all&api_key=`+process.env.SPACEKEY
+//const baseUrl = `https://api.nasa.gov/DONKI/notifications?startDate=${yesterday}&endDate=${today}&type=all&api_key=`+process.env.SPACEKEY
+const baseUrl = `https://api.nasa.gov/DONKI/notifications?&type=all&api_key=`+process.env.SPACEKEY
 const getWeather = () => {
   console.log("getweather")
   return axios.get(baseUrl)

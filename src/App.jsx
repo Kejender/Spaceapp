@@ -24,6 +24,23 @@ function App() {
   const infoicon = document.getElementById('infoicon');
   const aboutcomponent = document.getElementById('about');
 
+  var mediaQueryPort = window.matchMedia("(orientation: portrait)");
+  var mediaQueryLand = window.matchMedia("(orientation: landscape)");
+  var mediaQueryHeight = window.matchMedia('(min-height: 500px)');
+
+  if (mediaQueryPort.matches){
+    console.log("PORTRAIT "+window.screen.width+" "+window.screen.height);
+  }
+
+  if (mediaQueryLand.matches && window.screen.width > 599 && window.screen.height < 599){
+    console.log("SMALLLANDSCAPE "+window.screen.width+" "+window.screen.height);
+  }
+
+  if (mediaQueryLand.matches && window.screen.width > 599 && window.screen.height > 599){
+    console.log("BIGLANDSCAPE "+window.screen.width+" "+window.screen.height);
+  }
+
+
 
 const changeText2 = () => {
   console.log("CT")
