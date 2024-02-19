@@ -59,6 +59,7 @@ const changeText2 = () => {
     photoinfocomponent.classList.replace("hidden", "visible")
     photoinfocomponent.classList.replace("photoinfoOut", "photoinfoIn")
 
+    // weather is hidden, show weather
   } else if (!weatherVisible) {
     console.log("2")
     setWeatherVisible(true)
@@ -68,6 +69,7 @@ const changeText2 = () => {
     photoinfocomponent.classList.replace("photoinfoIn", "photoinfoOut")
     photoinfocomponent.classList.replace("visible", "hidden")
 
+  // weather is shown, hide weather and show photoinfo
   } else if (weatherVisible){
     console.log("3")
     setWeatherVisible(false)
@@ -120,10 +122,18 @@ useEffect(() => {
     .then(response => {
       console.log('promise fulfilled space', response.data)
       console.log("MEDIA "+response.data.media_type)
+
+      // content type is image
       if (response.data.media_type === "image") {
-        console.log("SE ON KUVA")
+        console.log("IMAGE")
+        setImage(response.data.url)
       }
-      setImage(response.data.url)
+      // content type is video
+      if (response.data.media_type === "video") {
+        console.log("VIDEO")
+        setImage(defaultImage)
+      }
+
       const photo = document.getElementById('photo');
       const wrap = document.getElementById('textwrap');
       wrap.style.width = photo.clientWidth+"px"
@@ -148,7 +158,7 @@ useEffect(() => {
       console.log('weather promise fulfilled', response.data)
       console.log('type', response.data[1].messageType)
 
-      // Checking whether there re report items in the array
+      // Checking whether there are report items in the array
       response.data.forEach(element => {
         if (element.messageType === 'Report'){
           console.log("Report")
